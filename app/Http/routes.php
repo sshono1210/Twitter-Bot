@@ -16,11 +16,25 @@ $app->get('/', function () use ($app) {
 });
 
 $app->post('/api/site', function () use ($app) {
-    return \Illuminate\Http\JsonResponse::create([
-        "status" => "OK",
-        "key" => "hogehoge"
-    ]);
+
+    $requestToken = true;
+
+    if($requestToken === false){
+        return \Illuminate\Http\JsonResponse::create([
+            "status" => "BAD",
+            "message" => "invalid token"
+        ], 400);
+
+    }else{
+        return \Illuminate\Http\JsonResponse::create([
+            "status" => "OK",
+            "key" => "hogehoge"
+        ], 200);
+    }
+
 });
+
+
 $app->get('/', function () use ($app) {
     return $app->version();
 });
