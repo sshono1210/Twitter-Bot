@@ -1,0 +1,23 @@
+{
+  "name": "apidoc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --server site --files docs/***.md"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aglio": "^2.2.0",
+    "api-mock": "^0.3.2",
+    "browser-sync": "^2.11.2",
+    "dredd": "^1.0.8",
+    "gulp": "^3.9.1",
+    "gulp-aglio": "0.0.10",
+    "gulp-concat": "^2.6.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "run-sequence": "^1.1.5"
+  }
+}

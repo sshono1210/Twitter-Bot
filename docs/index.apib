@@ -1,0 +1,83 @@
+FORMAT: 1A
+
+# Grouping Resources API
+This API example demonstrates how to group resources and form **groups of resources**. You can create as many or as few groups as you like. If you do not create any group all your resources will be part of an "unnamed" group.
+
+## API Blueprint
++ [Previous: Named Resource and Actions](03.%20Named%20Resource%20and%20Actions.md)
++ [This: Raw API Blueprint](https://raw.github.com/apiaryio/api-blueprint/master/examples/04.%20Grouping%20Resources.md)
++ [Next: Responses](05.%20Responses.md)
+
+# Group Site
+
+アクセストークンを登録し、システム上でのアカウントの登録を行う箇所
+
+## site [/api/site]
+
+### アクセストークンの登録 [POST]
+
++ Request (application/json)
+
+        {
+            token: "ABCDEFG"
+        }
+
++ Response 200
+
+        {
+            "status": "OK",
+            "key": "hogehoge"
+        }
+
++ Request (application/json)
+
+        {
+            "token": "あいうえお"
+        }
+
++ Response 400
+
+        {
+            "status":"BAD",
+            "message": "invalid token"
+        }
+
+# Group Tweet
+
+TwitterAPIを用いてTweetを行う。
+
+## site [/api/tweet]
+
+### ツイートの投稿 [POST]
+
++ Request (application/json)
+
+    + Headers
+    
+            X-My-Message-Header : "hogehoge"
+        
+    + Body
+    
+            {
+                messesage: "ツイートする内容をこちらに"
+            }
+
++ Response 200
+
+        {
+            status:"OK",
+        }
+
++ Request (application/json)
+
+        {
+            token: "あいうえお"
+        }
+
++ Response 400
+
+        {
+            status:"BAD",
+            message: "invalid token"
+        }
+

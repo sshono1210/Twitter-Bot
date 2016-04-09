@@ -14,3 +14,13 @@
 $app->get('/', function () use ($app) {
     return $app->version();
 });
+
+$app->post('/api/site', function () use ($app) {
+    return \Illuminate\Http\JsonResponse::create([
+        "status" => "OK",
+        "key" => "hogehoge"
+    ]);
+});
+$app->get('/', function () use ($app) {
+    return $app->version();
+});
